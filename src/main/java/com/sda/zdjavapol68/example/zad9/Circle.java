@@ -2,18 +2,23 @@ package com.sda.zdjavapol68.example.zad9;
 
 public class Circle {
 
-    public Circle(Point2D center, Point2D point2D) {
+    private final Point2D center;
+    private final Point2D point;
+
+    public Circle(Point2D center, Point2D point) {
+        this.center = center;
+        this.point = point;
     }
 
     public double getRadius(){
-        return Double.NaN;
+        return Math.sqrt(Math.pow(center.getX() - point.getX(), 2) + Math.pow(center.getY() - point.getY(), 2));
     }
 
     public double getPerimeter(){
-        return Double.NaN;
+        return 2 * Math.PI * getRadius();
     }
 
     public double getArea() {
-        return Double.NaN;
+        return Math.PI * Math.pow(getRadius(), 2);
     }
 }

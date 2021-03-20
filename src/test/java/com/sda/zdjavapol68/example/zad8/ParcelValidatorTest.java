@@ -9,7 +9,7 @@ class ParcelValidatorTest {
 
     @Test
     void testStandardParcelHappyPath() {
-        Parcel parcel = new Parcel();
+        Parcel parcel = new Parcel(31, 32, 33, 19.0f, false);
         ParcelValidator parcelValidator = new ParcelValidator();
         Assertions.assertTrue(parcelValidator.validate(parcel));
     }

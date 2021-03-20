@@ -3,7 +3,7 @@ Zaimplementuj interfejs `Validator`, który będzie zawierać w swojej deklaracj
 
 Stwórz klasę `Parcel` z parametrami:
 * int xLength 
-*  int yLength
+* int yLength
 * int zLength
 * float weight
 * boolean isExpress

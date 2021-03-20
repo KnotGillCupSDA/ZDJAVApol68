@@ -3,15 +3,15 @@ package com.sda.zdjavapol68.example.zad11;
 public class Circle implements Movable, Resizable {
 
     private final Point2D center;
-    private final Point2D point;
+    private double radius;
 
     public Circle(Point2D center, Point2D point) {
         this.center = center;
-        this.point = point;
+        radius = Math.sqrt(Math.pow(center.getX() - point.getX(), 2) + Math.pow(center.getY() - point.getY(), 2));
     }
 
     public double getRadius(){
-        return Math.sqrt(Math.pow(center.getX() - point.getX(), 2) + Math.pow(center.getY() - point.getY(), 2));
+        return radius;
     }
 
     public double getPerimeter(){
@@ -25,11 +25,10 @@ public class Circle implements Movable, Resizable {
     @Override
     public void move(MoveDirection moveDirection) {
         center.move(moveDirection);
-        point.move(moveDirection);
     }
 
     @Override
     public void resize(double resizeFactor) {
-
+        radius *= resizeFactor;
     }
 }

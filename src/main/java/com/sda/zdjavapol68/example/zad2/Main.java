@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args) {
 
         List<String> unsorted = List.of("A", "B", "b", "Z", "a", "c");
-
         List<String> sorted = sort(unsorted);
 
         System.out.println(sorted);
@@ -27,6 +26,5 @@ public class Main {
 
         //high level
         //unsorted.sort(String.CASE_INSENSITIVE_ORDER.reversed());
-
     }
 }

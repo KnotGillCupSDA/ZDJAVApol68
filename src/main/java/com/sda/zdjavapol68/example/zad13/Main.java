@@ -18,12 +18,17 @@ public class Main {
         carService.add(car2);
         carService.add(car3);
 
-        System.out.println(carService.getAll());
+        System.out.println(carService.getCars());
+        System.out.println("============");
 
         carService.remove(car2);
-        System.out.println(carService.getAll());
+        System.out.println(carService.getCars());
+        System.out.println("============");
 
-        System.out.println(carService.getCarsWithV12Engine());
+        carService.add(car2);
+        System.out.println(carService.getSorted(SortOrder.ASC));
+        System.out.println("============");
+        System.out.println(carService.getSorted(SortOrder.DESC));
 
     }
 }

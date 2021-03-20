@@ -1,4 +1,4 @@
-Zadanie 12.
+# Zadanie 12.
 Stwórz klasę Manufacturer, która będzie zawierać pola: nazwa, rok założenia, kraj. 
 Uwzględnij wszystkie niezbędne meotody oraz parametry konstruktora. Zaimplementuj metody hashCode() i equals().
 Stwórz klasę Car, która będzie zawierać pola: nazwa, model, cena, rok produkcji, lista producentów (Manufacturer), 

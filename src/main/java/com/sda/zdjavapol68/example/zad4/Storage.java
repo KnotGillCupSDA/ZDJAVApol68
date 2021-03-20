@@ -14,6 +14,10 @@ public class Storage {
 
     public void addToStorage(String key, String value){
         //storage.put(key, value);
+
+        // check if there is already that key in the stotage
+        // if so, add value to the existing list
+        // if not add new list with 1 element
     }
 
     public void printValues(String key) {

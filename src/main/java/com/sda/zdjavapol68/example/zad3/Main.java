@@ -1,7 +1,7 @@
 package com.sda.zdjavapol68.example.zad3;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -22,9 +22,31 @@ public class Main {
                 "PHP", 0);
 
         print(map);
+        System.out.println("==========");
+        printWithStream(map);
     }
 
     private static void print(Map<String, Integer> map) {
-
+        int i = 0;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println("Klucz: " + entry.getKey() + ", Wartość: " + entry.getValue()
+                    + (++i == map.size() ? "." : ","));
+        }
     }
+
+    private static void printWithStreamHacky(Map<String, Integer> map) {
+        String collected = map.entrySet().stream()
+                .map(entry -> "Klucz: " + entry.getKey() + ", Wartość: " + entry.getValue())
+                .collect(Collectors.joining("," + System.lineSeparator()));
+        System.out.print(collected);
+        System.out.println(".");
+    }
+
+    private static void printWithStream(Map<String, Integer> map) {
+        String collected = map.entrySet().stream()
+                .map(entry -> "Klucz: " + entry.getKey() + ", Wartość: " + entry.getValue())
+                .collect(Collectors.joining("," + System.lineSeparator(), "", "."));
+        System.out.print(collected);
+    }
+
 }

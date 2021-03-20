@@ -1,7 +1,5 @@
 package com.sda.zdjavapol68.example.zad13;
 
-import com.sda.zdjavapol68.example.zad12.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,5 +10,19 @@ public class CarService {
         cars = new ArrayList<>();
     }
 
+    public void add(Car car) {
 
+    }
+
+    public List<Car> getAll() {
+        return null;
+    }
+
+    public void remove(Car car) {
+
+    }
+
+    public List<Car> getCarsWithV12Engine() {
+        return null;
+    }
 }

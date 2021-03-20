@@ -44,5 +44,14 @@ public class Storage {
 
     public void findValues(String value) {
 
+        /*for (Map.Entry<String, List<String>> entry : storage.entrySet()) {
+            if(entry.getValue().contains(value)) {
+                System.out.println(entry.getKey());
+            }
+        }*/
+
+        storage.entrySet().stream()
+                .filter(entry -> entry.getValue().contains(value))
+                .forEach(entry -> System.out.println(entry.getKey()));
     }
 }

@@ -24,6 +24,7 @@ public class Circle implements Movable {
 
     @Override
     public void move(MoveDirection moveDirection) {
-
+        center.move(moveDirection);
+        point.move(moveDirection);
     }
 }

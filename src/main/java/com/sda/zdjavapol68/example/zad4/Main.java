@@ -8,6 +8,7 @@ public class Main {
         storage.addToStorage("klucz1", "wartosc2");
 
         storage.printValues("klucz1");
+        storage.printValues("klucz2");
 
         storage.findValues("wartosc1");
 

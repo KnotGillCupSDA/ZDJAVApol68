@@ -1,4 +1,6 @@
 package com.sda.zdjavapol68.example.zad28;
 
-public class SkipArrayList {
+import java.util.ArrayList;
+
+public class SkipArrayList<E> extends ArrayList<E> {
 }

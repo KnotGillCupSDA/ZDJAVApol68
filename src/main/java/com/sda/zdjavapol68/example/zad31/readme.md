@@ -7,4 +7,4 @@ regex1 = [^\p{L}\s]
 line.replaceAll("[^\\p{L}\\s]", "")
 
 inny przykład
-regex2 = [^a0-9-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]
+regex2 = [^0-9a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]

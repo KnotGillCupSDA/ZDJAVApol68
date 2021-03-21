@@ -35,12 +35,15 @@ public class Main {
     private static Map<String, Integer> countWords(List<String> lines) {
         Map<String, Integer> mapList = new HashMap<>();
         for (String s : lines) {
-            String[] l = s.split(" ");
-            for (String value : l) {
-                if (mapList.containsKey(value)) {
-                    mapList.put(value, mapList.get(value) + 1);
-                } else {
-                    mapList.put(value, 1);
+            String[] line = s.split("\\s+");
+            for (String value : line) {
+                String normalizedValue = value.replaceAll("[^0-9a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]", "").trim();
+                if(!normalizedValue.isBlank()) {
+                    if (mapList.containsKey(normalizedValue)) {
+                        mapList.put(normalizedValue, mapList.get(normalizedValue) + 1);
+                    } else {
+                        mapList.put(normalizedValue, 1);
+                    }
                 }
             }
         }

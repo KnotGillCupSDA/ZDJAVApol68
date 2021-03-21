@@ -6,6 +6,7 @@ import java.util.List;
 public class SkipArrayList<E> extends ArrayList<E> {
 
     public List<E> getEveryNthElement(int startIndex, int skip) {
-
+        List<E> skipped = new ArrayList<>();
+        return skipped;
     }
 }

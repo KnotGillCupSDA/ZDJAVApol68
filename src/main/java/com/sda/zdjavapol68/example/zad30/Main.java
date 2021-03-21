@@ -26,7 +26,16 @@ public class Main {
         System.out.println(reversed);
 
         //writeOldWay(resourceDir.resolve("test.txt"), reversed);
-        writeWithNio(resourceDir.resolve("test.txt"), reversed);
+        String reversedFileName = getReversedFileName(inputFile);
+        System.out.println(reversedFileName);
+        writeWithNio(resourceDir.resolve(reversedFileName), reversed);
+    }
+
+    private static String getReversedFileName(Path inputFile) {
+        String fileName = inputFile.toFile().getName();
+        String stringWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
+        String extension = fileName.substring(fileName.lastIndexOf('.'));
+        return new StringBuilder(stringWithoutExtension).reverse().append(extension).toString();
     }
 
     private static void writeWithNio(Path outputFile, List<String> reversed) throws IOException {

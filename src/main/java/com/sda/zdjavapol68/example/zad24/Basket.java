@@ -6,6 +6,6 @@ public class Basket {
     }
 
     public void removeFromBasket() {
-
+        throw new BasketEmptyException();
     }
 }

@@ -14,6 +14,12 @@ class BasketTest {
     }
 
     @Test
+    void happyPath() {
+        basket.addToBasket();
+        basket.removeFromBasket();
+    }
+
+    @Test
     void thatWeCantRemoveFromEmptyBasket() {
         Assertions.assertThrows(BasketEmptyException.class, () -> basket.removeFromBasket());
     }

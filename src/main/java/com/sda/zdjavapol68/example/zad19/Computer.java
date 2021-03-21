@@ -1,4 +1,4 @@
-package com.sda.zdjavapol68.example.zad18;
+package com.sda.zdjavapol68.example.zad19;
 
 import java.util.Objects;
 

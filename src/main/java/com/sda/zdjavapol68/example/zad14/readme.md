@@ -1,6 +1,7 @@
 # Zadanie 14.
-Na podstawie 100000 elementowej tablicy z losowo wybranymi wartościami zaimplementuj następujące
-funkcjonalności:
+Na podstawie 100000 elementowej tablicy z losowo wybranymi wartościami. 
+
+Zaimplementuj następujące funkcjonalności:
 1. zwróć listę unikalnych elementów,
 2. zwróć listę elementów, które co najmniej raz powtórzyły się w wygenerowanej tablicy,
 3. zwróć listę 25 najczęściej powtarzających się elementów.

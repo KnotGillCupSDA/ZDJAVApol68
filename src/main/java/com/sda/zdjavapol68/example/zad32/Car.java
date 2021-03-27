@@ -1,38 +1,55 @@
 package com.sda.zdjavapol68.example.zad32;
 
-public class Car {
+import java.io.Serializable;
+import java.util.List;
 
-    private String name;
-    private String model;
-    private double price;
+public class Car implements Serializable {
 
-    public Car(String name, String model, double price) {
+    private static final long serialVersionUID = 922820277968106382L;
+
+    private final String name;
+    private final String model;
+    private final double price;
+    private final List<Manufacturer> manufacturers;
+
+    public Car(String name, String model, double price, List<Manufacturer> manufacturers) {
         this.name = name;
         this.model = model;
         this.price = price;
+        this.manufacturers = manufacturers;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getModel() {
         return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public List<Manufacturer> getManufacturers() {
+        return manufacturers;
+    }
+
+   /* private void writeObject(ObjectOutputStream oos) {
+        System.out.println("write");
+    }
+
+    private void readObject(ObjectInputStream ois) {
+        System.out.println("read");
+    }*/
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                ", price=" + price +
+                ", manufacturers=" + manufacturers +
+                '}';
     }
 }

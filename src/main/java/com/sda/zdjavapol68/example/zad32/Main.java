@@ -11,13 +11,14 @@ public class Main {
         Manufacturer audi = new Manufacturer("Audi", 1930, "Germany");
         Manufacturer subaru = new Manufacturer("Subaru", 1930, "Japan");
         
-        Car car1 = new Car("Moj pierwszy samochod", "A2", 10.0, List.of(bmw));
+        Car car1 = new Car("Moj pierwszy samochod", "A2", 10.0);
 
-        Car car2 = new Car("Moj drugi samochod", "A2", 10.0, List.of(audi));
-        Car car3 = new Car("Sub", "Outback", 16.0, List.of(bmw, subaru));
+        Car car2 = new Car("Moj drugi samochod", "A2", 10.0);
+        Car car3 = new Car("Sub", "Outback", 16.0);
         List<Car> cars = List.of(car1, car2, car3);
 
-        CarStorage carStorage = new CarStorage(Paths.get("src", "main", "resources", "cars.db"));
+        //CarStorage carStorage = new SerializableCarStorage(Paths.get("src", "main", "resources", "cars.db"));
+        CarStorage carStorage = new JsonCarStorage(Paths.get("src", "main", "resources", "cars.json"));
 
         carStorage.save(cars);
 

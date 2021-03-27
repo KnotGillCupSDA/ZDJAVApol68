@@ -1,7 +1,9 @@
 package com.sda.zdjavapol68.example.zad32;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
-import java.util.List;
 
 public class Car implements Serializable {
 
@@ -10,13 +12,14 @@ public class Car implements Serializable {
     private final String name;
     private final String model;
     private final double price;
-    private final List<Manufacturer> manufacturers;
 
-    public Car(String name, String model, double price, List<Manufacturer> manufacturers) {
+    @JsonCreator
+    public Car(@JsonProperty("name") String name,
+               @JsonProperty("model") String model,
+               @JsonProperty("price") double price) {
         this.name = name;
         this.model = model;
         this.price = price;
-        this.manufacturers = manufacturers;
     }
 
     public String getName() {
@@ -31,11 +34,7 @@ public class Car implements Serializable {
         return price;
     }
 
-    public List<Manufacturer> getManufacturers() {
-        return manufacturers;
-    }
-
-   /* private void writeObject(ObjectOutputStream oos) {
+    /* private void writeObject(ObjectOutputStream oos) {
         System.out.println("write");
     }
 
@@ -49,7 +48,6 @@ public class Car implements Serializable {
                 "name='" + name + '\'' +
                 ", model='" + model + '\'' +
                 ", price=" + price +
-                ", manufacturers=" + manufacturers +
                 '}';
     }
 }

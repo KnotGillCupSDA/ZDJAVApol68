@@ -18,7 +18,5 @@ public class Main {
             List<Runnable> runnables = executorService.shutdownNow();
             System.out.println(runnables);
         }
-
-
     }
 }

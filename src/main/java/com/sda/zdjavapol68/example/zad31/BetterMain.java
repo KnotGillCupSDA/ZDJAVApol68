@@ -15,11 +15,14 @@ public class BetterMain {
         Path path = Paths.get("src", "main", "resources", "zad31");
         String fileName = "veryLongFile.txt";
 
-        Files.lines(path.resolve(fileName))
-                .map(line -> line.replaceAll("[^\\p{L}\\s]", ""))
-                .map(line -> line.split(" "))
-                .flatMap(Stream::of)
-                .forEach( s -> counter.compute(s, (k, v) -> v == null ? 1 : v + 1));
+        //we have to close the stream based on IO channel
+        try (Stream<String> lines = Files.lines(path.resolve(fileName))) {
+            lines
+                    .map(line -> line.replaceAll("[^\\p{L}\\s]", ""))
+                    .map(line -> line.split(" "))
+                    .flatMap(Stream::of)
+                    .forEach(s -> counter.compute(s, (k, v) -> v == null ? 1 : v + 1));
+        }
 
         System.out.println(counter);
     }

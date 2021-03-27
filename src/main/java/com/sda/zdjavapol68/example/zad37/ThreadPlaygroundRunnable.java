@@ -13,13 +13,22 @@ class ThreadPlaygroundRunnable implements Runnable {
     @Override
     public void run() {
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println(String.join(":", Thread.currentThread().getName(), name, String.valueOf(i)));
-            try {
+        try {
+            int i = 0;
+            while (true) {
+                System.out.println(String.join(":", Thread.currentThread().getName(), name, String.valueOf(i)));
                 Thread.sleep(new Random().nextInt(100));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "ThreadPlaygroundRunnable{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
